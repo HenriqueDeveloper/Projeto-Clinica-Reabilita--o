@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Caminho da Recuperação - Direcionamento para Clínicas de Dependência
+      Química
+    </title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#57B5E7",
+              secondary: "#8DD3C7",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before {
+      content: "\f3c2";
+      }
+      body {
+      font-family: 'Poppins', sans-serif;
+      }
+      .hero-bg {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(247, 250, 252, 0.9) 50%, rgba(240, 249, 255, 0.85) 100%), url('https://readdy.ai/api/search-image?query=serene%20healthcare%20environment%20with%20soft%20natural%20lighting%2C%20peaceful%20medical%20consultation%20room%20with%20warm%20atmosphere%2C%20clean%20modern%20interior%20design%2C%20gentle%20healing%20ambiance%2C%20professional%20yet%20welcoming%20space%2C%20subtle%20blue%20and%20white%20tones&width=1920&height=1080&seq=hero002&orientation=landscape');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      }
+      .hero-text-shadow {
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .hero-gradient-text {
+      background: linear-gradient(135deg, #2563eb 0%, #57B5E7 50%, #8DD3C7 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      }
+      /* Cursor animado com o mesmo gradiente da frase */
+      #typing .cursor {
+        display: inline-block;
+        width: 1px; /* Bem fino */
+        height: 1.2em;
+        vertical-align: middle;
+        background: linear-gradient(135deg, #2563eb 0%, #57B5E7 50%, #8DD3C7 100%);
+        border-radius: 2px;
+        /* Faz o gradiente aparecer como cor sólida */
+        /* Para navegadores modernos */
+        -webkit-mask-image: linear-gradient(135deg, #2563eb 0%, #57B5E7 50%, #8DD3C7 100%);
+        mask-image: linear-gradient(135deg, #2563eb 0%, #57B5E7 50%, #8DD3C7 100%);
+        background-clip: border-box;
+        border: none;
+        /* Remove cor cinza */
+        color: transparent;
+        font-weight: bold;
+        animation: blink 1s steps(1) infinite; /* Piscar como cursor padrão */
+        transition: opacity 1s;
+      }
+      @keyframes blink {
+        0%, 50% { opacity: 1; }
+        51%, 100% { opacity: 0; }
+      }
+      #typing.fadeout .cursor {
+        opacity: 0;
+        transition: opacity 1s;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 overflow-x-hidden">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-18 relative">
+          <div class="flex items-center">
+            <!-- No header desktop -->
+            <img src="assets/logoSF.png" alt="Logo" class="h-20 w-auto" />
+          </div>
+          <nav class="hidden md:flex space-x-8">
+            <a
+              href="#inicio"
+              class="menu-link text-gray-700 hover:text-primary transition-colors duration-200 relative"
+              >Início</a
+            >
+            <a
+              href="#sobre"
+              class="menu-link text-gray-700 hover:text-primary transition-colors duration-200 relative"
+              >Sobre Nós</a
+            >
+            <a
+              href="#servicos"
+              class="menu-link text-gray-700 hover:text-primary transition-colors duration-200 relative"
+              >Serviços</a
+            >
+            <a
+              href="#clinicas"
+              class="menu-link text-gray-700 hover:text-primary transition-colors duration-200 relative"
+              >Clínicas Parceiras</a
+            >
+            <a
+              href="#interacao"
+              class="menu-link text-gray-700 hover:text-primary transition-colors duration-200 relative"
+              >Interação</a
+            >
+            <a
+              href="#contato"
+              class="menu-link text-gray-700 hover:text-primary transition-colors duration-200 relative"
+              >Contato</a
+            >
+          </nav>
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden w-10 h-10 flex items-center justify-center absolute right-4 top-1/2 -translate-y-1/2 z-50"
+          >
+            <i class="ri-menu-line text-3xl text-primary"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu-overlay"
+      class="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden opacity-0 invisible transition-all duration-300"
+    ></div>
+
+    <!-- Mobile Menu Sidebar -->
+    <div
+      id="mobile-menu"
+      class="fixed top-0 right-0 h-full w-full sm:w-80 bg-white shadow-2xl z-50 md:hidden transform translate-x-full transition-transform duration-300 ease-in-out"
+    >
+      <div
+        class="flex items-center justify-between p-6 border-b border-gray-200"
+      >
+        <!-- Logo no menu mobile -->
+        <img src="assets/logoSF2.png" alt="Logo" class="h-20 w-auto" />
+        <button
+          id="mobile-menu-close"
+          class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-700 transition-colors"
+        >
+          <i class="ri-close-line text-xl"></i>
+        </button>
+      </div>
+      <nav class="p-6">
+        <div class="space-y-1">
+          <a
+            href="#inicio"
+            class="mobile-menu-link block py-3 px-4 text-gray-700 hover:bg-gray-50 hover:text-primary rounded-lg transition-all duration-200"
+            >Início</a
+          >
+          <a
+            href="#sobre"
+            class="mobile-menu-link block py-3 px-4 text-gray-700 hover:bg-gray-50 hover:text-primary rounded-lg transition-all duration-200"
+            >Sobre Nós</a
+          >
+          <a
+            href="#servicos"
+            class="mobile-menu-link block py-3 px-4 text-gray-700 hover:bg-gray-50 hover:text-primary rounded-lg transition-all duration-200"
+            >Serviços</a
+          >
+          <a
+            href="#clinicas"
+            class="mobile-menu-link block py-3 px-4 text-gray-700 hover:bg-gray-50 hover:text-primary rounded-lg transition-all duration-200"
+            >Clínicas Parceiras</a
+          >
+          <a
+            href="#interacao"
+            class="mobile-menu-link block py-3 px-4 text-gray-700 hover:bg-gray-50 hover:text-primary rounded-lg transition-all duration-200"
+            >Interação</a
+          >
+          <a
+            href="#contato"
+            class="mobile-menu-link block py-3 px-4 text-gray-700 hover:bg-gray-50 hover:text-primary rounded-lg transition-all duration-200"
+            >Contato</a
+          >
+        </div>
+        <div class="mt-8 pt-6 border-t border-gray-200">
+          <button
+            class="w-full bg-primary text-white py-3 px-4 !rounded-button font-semibold hover:bg-opacity-90 transition-all duration-200 whitespace-nowrap"
+          >
+            <i class="ri-phone-line mr-2"></i>
+            Ligar Agora
+          </button>
+        </div>
+      </nav>
+    </div>
+    <!-- Hero Section -->
+    <section
+      id="inicio"
+      class="hero-bg min-h-screen flex items-center relative overflow-hidden"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-blue-50/30"
+      ></div>
+      <div class="w-full max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center">
+          <h1
+            class="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-6 hero-text-shadow leading-tight break-words"
+          >
+            <span class="text-gray-800">Encontre o caminho</span><br />
+            <span class="text-gray-800">para a </span>
+            <span class="hero-gradient-text" id="typing"></span>
+          </h1>
+          <style>
+            /* Cursor animado com o mesmo gradiente da frase */
+            #typing .cursor {
+              display: inline-block;
+              width: 2.5px; /* Bem fino */
+              height: 1.2em;
+              vertical-align: middle;
+              background: linear-gradient(135deg, #2563eb 0%, #57B5E7 50%, #8DD3C7 100%);
+              border-radius: 2px;
+              /* Faz o gradiente aparecer como cor sólida */
+              /* Para navegadores modernos */
+              -webkit-mask-image: linear-gradient(135deg, #2563eb 0%, #57B5E7 50%, #8DD3C7 100%);
+              mask-image: linear-gradient(135deg, #2563eb 0%, #57B5E7 50%, #8DD3C7 100%);
+              background-clip: border-box;
+              border: none;
+              /* Remove cor cinza */
+              color: transparent;
+              font-weight: bold;
+              animation: blink 1s steps(1) infinite; /* Piscar como cursor padrão */
+              transition: opacity 1s;
+            }
+            @keyframes blink {
+              0%, 50% { opacity: 1; }
+              51%, 100% { opacity: 0; }
+            }
+            #typing.fadeout .cursor {
+              opacity: 0;
+              transition: opacity 1s;
+            }
+          </style>
+
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              const palavra = "recuperação";
+              const typingSpan = document.getElementById("typing");
+
+              function typeWord(callback) {
+                let i = 0;
+                typingSpan.classList.remove("fadeout");
+                function type() {
+                  if (i <= palavra.length) {
+                    typingSpan.innerHTML =
+                      palavra.slice(0, i) +
+                      '<span class="cursor">|</span>';
+                    i++;
+                    setTimeout(type, 150);
+                  } else {
+                    typingSpan.innerHTML = palavra + '<span class="cursor">|</span>';
+                    if (callback) callback();
+                  }
+                }
+                type();
+              }
+
+              function eraseWord(callback) {
+                let i = palavra.length;
+                function erase() {
+                  if (i >= 0) {
+                    typingSpan.innerHTML =
+                      palavra.slice(0, i) +
+                      '<span class="cursor">|</span>';
+                    i--;
+                    setTimeout(erase, 100); // velocidade de apagar
+                  } else {
+                    typingSpan.innerHTML = '<span class="cursor">|</span>';
+                    if (callback) callback();
+                  }
+                }
+                erase();
+              }
+
+              function startTypingLoop() {
+                typeWord(() => {
+                  setTimeout(() => {
+                    eraseWord(() => {
+                      setTimeout(startTypingLoop, 800); // pausa antes de recomeçar
+                    });
+                  }, 7000); // tempo que a frase fica totalmente escrita
+                });
+              }
+
+              startTypingLoop();
+            });
+          </script>
+
+          <p
+            class="text-sm sm:text-lg md:text-xl text-gray-600 mb-10 max-w-4xl mx-auto leading-relaxed font-medium"
+          >
+            Oferecemos apoio especializado e direcionamento seguro para pessoas
+            com dependência química, conectando famílias às melhores clínicas de
+            tratamento próximas a você.
+          </p>
+          <div
+            class="flex flex-col sm:flex-row gap-6 justify-center items-center"
+          >
+            <button
+              class="bg-gradient-to-r from-blue-600 to-primary text-white px-10 py-5 !rounded-button text-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 whitespace-nowrap"
+            >
+              <i class="ri-phone-line mr-2"></i>
+              Buscar Ajuda Agora
+            </button>
+            <button
+              class="bg-white/90 backdrop-blur-sm border-2 border-gray-200 text-gray-700 px-10 py-5 !rounded-button text-lg font-semibold hover:bg-white hover:shadow-lg hover:scale-105 transition-all duration-300 whitespace-nowrap"
+            >
+              <i class="ri-chat-3-line mr-2"></i>
+              Fale Conosco
+            </button>
+          </div>
+          <div
+            class="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
+          >
+        </div>
+      </div>
+    </section>
+    <!-- Sobre Nós -->
+    <section id="sobre" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+              Nossa Missão é Cuidar
+            </h2>
+            <p class="text-lg text-gray-600 mb-6">
+              Somos uma equipe especializada com mais de 10 anos de experiência
+              em apoio a pessoas com dependência química e suas famílias. Nossa
+              missão é oferecer direcionamento seguro e humanizado para o
+              tratamento adequado.
+            </p>
+            <p class="text-lg text-gray-600 mb-6">
+              Acreditamos que cada pessoa merece uma segunda chance e que o
+              caminho para a recuperação deve ser trilhado com dignidade,
+              respeito e profissionalismo. Trabalhamos 24 horas por dia para
+              conectar você às melhores opções de tratamento.
+            </p>
+            <div class="mt-6">
+              <ul class="space-y-4 text-gray-700 text-base">
+                <li>
+                  <span class="font-semibold text-primary">Visão</span><br>
+                  Ser referência em reabilitação, oferecendo um ambiente de acolhimento, cuidado e transformação, ajudando cada paciente a conquistar uma nova oportunidade de vida.
+                </li>
+                <li>
+                  <span class="font-semibold text-secondary">Missão</span><br>
+                  Promover saúde, recuperação e reintegração social por meio de um atendimento humanizado, seguro e ético, proporcionando aos pacientes e suas famílias esperança e qualidade de vida.
+                </li>
+                <li>
+                  <span class="font-semibold text-primary">Valores</span>
+                  <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                    <li>Respeito à dignidade e individualidade de cada paciente.</li>
+                    <li>Empatia no acolhimento e no cuidado diário.</li>
+                    <li>Compromisso com a ética e a responsabilidade profissional.</li>
+                    <li>Dedicação ao processo de transformação e recuperação.</li>
+                    <li>Esperança como base para um novo começo.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="relative">
+            <img
+              src="assets/banner-recomeco.png"
+              class="rounded-lg shadow-lg object-cover w-full h-500"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Serviços -->
+    <section id="servicos" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-p to-secondary bg-clip-text text-transparent">
+            Nossos Serviços
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Oferecemos um processo completo e humanizado para apoiar você e sua
+            família neste momento delicado
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-10">
+          <!-- Card Serviço -->
+          <div class="group bg-white p-8 rounded-2xl shadow-lg border-2 border-transparent hover:border-primary transition-all duration-300 hover:scale-105 hover:-translate-y-2 relative overflow-hidden">
+            <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-opacity-20">
+              <i class="ri-phone-line text-3xl text-primary group-hover:animate-bounce"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-4 group-hover:text-primary transition-colors duration-300">
+              Atendimento 24h
+            </h3>
+            <p class="text-gray-600">
+              Disponibilidade total para orientação e suporte em situações de
+              emergência. Nossa equipe está sempre pronta para ajudar quando
+              você mais precisa.
+            </p>
+          </div>
+          <!-- Card Serviço -->
+          <div class="group bg-white p-8 rounded-2xl shadow-lg border-2 border-transparent hover:border-secondary transition-all duration-300 hover:scale-105 hover:-translate-y-2 relative overflow-hidden">
+            <div class="w-16 h-16 bg-secondary bg-opacity-10 rounded-full flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-opacity-20">
+              <i class="ri-map-pin-line text-3xl text-secondary group-hover:animate-bounce"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-4 group-hover:text-secondary transition-colors duration-300">
+              Localização de Clínicas
+            </h3>
+            <p class="text-gray-600">
+              Identificamos as melhores clínicas de tratamento próximas à sua
+              localização, considerando qualidade, especialização e adequação ao
+              perfil do paciente.
+            </p>
+          </div>
+          <!-- Card Serviço -->
+          <div class="group bg-white p-8 rounded-2xl shadow-lg border-2 border-transparent hover:border-primary transition-all duration-300 hover:scale-105 hover:-translate-y-2 relative overflow-hidden">
+            <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-opacity-20">
+              <i class="ri-user-heart-line text-3xl text-primary group-hover:animate-bounce"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-4 group-hover:text-primary transition-colors duration-300">
+              Remoção Segura
+            </h3>
+            <p class="text-gray-600">
+              Processo de remoção humanizado e seguro, conduzido por
+              profissionais especializados, garantindo dignidade e cuidado
+              durante todo o transporte.
+            </p>
+          </div>
+          <!-- Card Serviço -->
+          <div class="group bg-white p-8 rounded-2xl shadow-lg border-2 border-transparent hover:border-secondary transition-all duration-300 hover:scale-105 hover:-translate-y-2 relative overflow-hidden">
+            <div class="w-16 h-16 bg-secondary bg-opacity-10 rounded-full flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-opacity-20">
+              <i class="ri-group-line text-3xl text-secondary group-hover:animate-bounce"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-4 group-hover:text-secondary transition-colors duration-300">
+              Apoio Familiar
+            </h3>
+            <p class="text-gray-600">
+              Orientação e suporte emocional para familiares, incluindo
+              informações sobre o processo de tratamento e como lidar com a
+              situação.
+            </p>
+          </div>
+          <!-- Card Serviço -->
+          <div class="group bg-white p-8 rounded-2xl shadow-lg border-2 border-transparent hover:border-primary transition-all duration-300 hover:scale-105 hover:-translate-y-2 relative overflow-hidden">
+            <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-opacity-20">
+              <i class="ri-file-list-line text-3xl text-primary group-hover:animate-bounce"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-4 group-hover:text-primary transition-colors duration-300">
+              Avaliação Personalizada
+            </h3>
+            <p class="text-gray-600">
+              Análise detalhada do caso para direcionamento à clínica mais
+              adequada, considerando tipo de dependência, histórico médico e
+              necessidades específicas.
+            </p>
+          </div>
+          <!-- Card Serviço -->
+          <div class="group bg-white p-8 rounded-2xl shadow-lg border-2 border-transparent hover:border-secondary transition-all duration-300 hover:scale-105 hover:-translate-y-2 relative overflow-hidden">
+            <div class="w-16 h-16 bg-secondary bg-opacity-10 rounded-full flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-opacity-20">
+              <i class="ri-shield-check-line text-3xl text-secondary group-hover:animate-bounce"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-4 group-hover:text-secondary transition-colors duration-300">
+              Acompanhamento Contínuo
+            </h3>
+            <p class="text-gray-600">
+              Monitoramento do processo de internação e suporte durante as
+              primeiras semanas de tratamento, garantindo adaptação adequada.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Clínicas Parceiras -->
+    <section id="clinicas" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-primary to-secondary bg-clip-text text-transparent">
+            Clínicas Parceiras
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Trabalhamos com as melhores instituições de tratamento, todas licenciadas, avaliadas e especializadas em dependência química.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <!-- Card Clínica -->
+          <div class="group bg-white rounded-2xl shadow-lg border-2 border-transparent hover:border-primary transition-all duration-300 hover:scale-105 hover:-translate-y-2 overflow-hidden relative">
+            <img
+              src="https://readdy.ai/api/search-image?query=modern%20rehabilitation%20clinic%20exterior%20with%20peaceful%20garden%2C%20clean%20white%20building%20with%20large%20windows%2C%20healing%20environment%2C%20professional%20medical%20facility%2C%20serene%20atmosphere%2C%20natural%20lighting&width=400&height=250&seq=clinic001&orientation=landscape"
+              alt="Clínica Esperança"
+              class="w-full h-48 object-cover object-top group-hover:scale-105 transition-transform duration-300"
+            />
+            <div class="absolute top-4 right-4 bg-primary/90 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1 shadow">
+              <i class="ri-shield-check-line text-base"></i> Licenciada
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2 group-hover:text-primary transition-colors duration-300">
+                Clínica Esperança
+              </h3>
+              <p class="text-primary font-medium mb-2">São Paulo - SP</p>
+              <div class="flex items-center gap-2 mb-2">
+                <i class="ri-star-fill text-yellow-400"></i>
+                <span class="text-gray-700 text-sm font-semibold">4.9/5</span>
+                <span class="text-gray-400 text-xs">(120 avaliações)</span>
+              </div>
+              <p class="text-gray-600 text-sm mb-2">
+                Especializada em tratamento de dependência química com abordagem multidisciplinar. Equipe médica altamente qualificada.
+              </p>
+              <div class="flex items-center gap-3 mt-4">
+                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">Vagas: 8</span>
+                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-semibold">Acompanhamento Familiar</span>
+              </div>
+            </div>
+          </div>
+          <!-- Card Clínica -->
+          <div class="group bg-white rounded-2xl shadow-lg border-2 border-transparent hover:border-secondary transition-all duration-300 hover:scale-105 hover:-translate-y-2 overflow-hidden relative">
+            <img
+              src="https://readdy.ai/api/search-image?query=therapeutic%20rehabilitation%20center%20with%20beautiful%20landscaping%2C%20modern%20medical%20building%20surrounded%20by%20nature%2C%20peaceful%20healing%20environment%2C%20professional%20healthcare%20facility&width=400&height=250&seq=clinic002&orientation=landscape"
+              alt="Instituto Vida Nova"
+              class="w-full h-48 object-cover object-top group-hover:scale-105 transition-transform duration-300"
+            />
+            <div class="absolute top-4 right-4 bg-secondary/90 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1 shadow">
+              <i class="ri-shield-check-line text-base"></i> Licenciada
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2 group-hover:text-secondary transition-colors duration-300">
+                Instituto Vida Nova
+              </h3>
+              <p class="text-secondary font-medium mb-2">Rio de Janeiro - RJ</p>
+              <div class="flex items-center gap-2 mb-2">
+                <i class="ri-star-fill text-yellow-400"></i>
+                <span class="text-gray-700 text-sm font-semibold">4.8/5</span>
+                <span class="text-gray-400 text-xs">(98 avaliações)</span>
+              </div>
+              <p class="text-gray-600 text-sm mb-2">
+                Centro de excelência em reabilitação com foco em tratamento humanizado. Terapias individuais e em grupo.
+              </p>
+              <div class="flex items-center gap-3 mt-4">
+                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-semibold">Vagas: 5</span>
+                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">Ambiente Acolhedor</span>
+              </div>
+            </div>
+          </div>
+          <!-- Card Clínica -->
+          <div class="group bg-white rounded-2xl shadow-lg border-2 border-transparent hover:border-primary transition-all duration-300 hover:scale-105 hover:-translate-y-2 overflow-hidden relative">
+            <img
+              src="https://readdy.ai/api/search-image?query=rehabilitation%20clinic%20with%20therapeutic%20gardens%2C%20clean%20modern%20architecture%2C%20medical%20facility%20with%20calming%20environment%2C%20professional%20treatment%20center%20with%20natural%20elements&width=400&height=250&seq=clinic003&orientation=landscape"
+              alt="Clínica Renascer"
+              class="w-full h-48 object-cover object-top group-hover:scale-105 transition-transform duration-300"
+            />
+            <div class="absolute top-4 right-4 bg-primary/90 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1 shadow">
+              <i class="ri-shield-check-line text-base"></i> Licenciada
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2 group-hover:text-primary transition-colors duration-300">
+                Clínica Renascer
+              </h3>
+              <p class="text-primary font-medium mb-2">Belo Horizonte - MG</p>
+              <div class="flex items-center gap-2 mb-2">
+                <i class="ri-star-fill text-yellow-400"></i>
+                <span class="text-gray-700 text-sm font-semibold">4.7/5</span>
+                <span class="text-gray-400 text-xs">(76 avaliações)</span>
+              </div>
+              <p class="text-gray-600 text-sm mb-2">
+                Referência em tratamento de dependências com metodologia inovadora. Medicina tradicional e terapias complementares.
+              </p>
+              <div class="flex items-center gap-3 mt-4">
+                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">Vagas: 4</span>
+                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-semibold">Terapias Naturais</span>
+              </div>
+            </div>
+          </div>
+          <!-- Card Clínica -->
+          <div class="group bg-white rounded-2xl shadow-lg border-2 border-transparent hover:border-secondary transition-all duration-300 hover:scale-105 hover:-translate-y-2 overflow-hidden relative">
+            <img
+              src="https://readdy.ai/api/search-image?query=peaceful%20medical%20rehabilitation%20facility%2C%20modern%20clinic%20building%20with%20therapeutic%20spaces%2C%20professional%20healthcare%20environment%20with%20natural%20lighting%20and%20gardens&width=400&height=250&seq=clinic004&orientation=landscape"
+              alt="Centro Harmonia"
+              class="w-full h-48 object-cover object-top group-hover:scale-105 transition-transform duration-300"
+            />
+            <div class="absolute top-4 right-4 bg-secondary/90 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1 shadow">
+              <i class="ri-shield-check-line text-base"></i> Licenciada
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2 group-hover:text-secondary transition-colors duration-300">
+                Centro Harmonia
+              </h3>
+              <p class="text-secondary font-medium mb-2">Curitiba - PR</p>
+              <div class="flex items-center gap-2 mb-2">
+                <i class="ri-star-fill text-yellow-400"></i>
+                <span class="text-gray-700 text-sm font-semibold">4.8/5</span>
+                <span class="text-gray-400 text-xs">(82 avaliações)</span>
+              </div>
+              <p class="text-gray-600 text-sm mb-2">
+                Clínica especializada em dependência química e transtornos associados. Programa intensivo de reabilitação.
+              </p>
+              <div class="flex items-center gap-3 mt-4">
+                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-semibold">Vagas: 6</span>
+                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">Acompanhamento Familiar</span>
+              </div>
+            </div>
+          </div>
+          <!-- Card Clínica -->
+          <div class="group bg-white rounded-2xl shadow-lg border-2 border-transparent hover:border-primary transition-all duration-300 hover:scale-105 hover:-translate-y-2 overflow-hidden relative">
+            <img
+              src="https://readdy.ai/api/search-image?query=therapeutic%20treatment%20center%20with%20serene%20architecture%2C%20medical%20facility%20designed%20for%20healing%2C%20clean%20modern%20building%20with%20calming%20outdoor%20spaces&width=400&height=250&seq=clinic005&orientation=landscape"
+              alt="Clínica Serenidade"
+              class="w-full h-48 object-cover object-top group-hover:scale-105 transition-transform duration-300"
+            />
+            <div class="absolute top-4 right-4 bg-primary/90 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1 shadow">
+              <i class="ri-shield-check-line text-base"></i> Licenciada
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2 group-hover:text-primary transition-colors duration-300">
+                Clínica Serenidade
+              </h3>
+              <p class="text-primary font-medium mb-2">Porto Alegre - RS</p>
+              <div class="flex items-center gap-2 mb-2">
+                <i class="ri-star-fill text-yellow-400"></i>
+                <span class="text-gray-700 text-sm font-semibold">4.9/5</span>
+                <span class="text-gray-400 text-xs">(110 avaliações)</span>
+              </div>
+              <p class="text-gray-600 text-sm mb-2">
+                Tratamento personalizado e reinserção social. Programa de acompanhamento pós-alta diferenciado.
+              </p>
+              <div class="flex items-center gap-3 mt-4">
+                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">Vagas: 7</span>
+                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-semibold">Pós-Alta</span>
+              </div>
+            </div>
+          </div>
+          <!-- Card Clínica -->
+          <div class="group bg-white rounded-2xl shadow-lg border-2 border-transparent hover:border-secondary transition-all duration-300 hover:scale-105 hover:-translate-y-2 overflow-hidden relative">
+            <img
+              src="https://readdy.ai/api/search-image?query=modern%20rehabilitation%20clinic%20with%20healing%20gardens%2C%20professional%20medical%20building%20with%20therapeutic%20design%2C%20peaceful%20healthcare%20facility%20surrounded%20by%20nature&width=400&height=250&seq=clinic006&orientation=landscape"
+              alt="Instituto Recomeço"
+              class="w-full h-48 object-cover object-top group-hover:scale-105 transition-transform duration-300"
+            />
+            <div class="absolute top-4 right-4 bg-secondary/90 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1 shadow">
+              <i class="ri-shield-check-line text-base"></i> Licenciada
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2 group-hover:text-secondary transition-colors duration-300">
+                Instituto Recomeço
+              </h3>
+              <p class="text-secondary font-medium mb-2">Salvador - BA</p>
+              <div class="flex items-center gap-2 mb-2">
+                <i class="ri-star-fill text-yellow-400"></i>
+                <span class="text-gray-700 text-sm font-semibold">4.8/5</span>
+                <span class="text-gray-400 text-xs">(95 avaliações)</span>
+              </div>
+              <p class="text-gray-600 text-sm mb-2">
+                Abordagem holística e equipe multidisciplinar. Alta taxa de sucesso em reabilitação.
+              </p>
+              <div class="flex items-center gap-3 mt-4">
+                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-semibold">Vagas: 3</span>
+                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">Equipe Multidisciplinar</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Interação -->
+    <section id="interacao" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16">
+          <!-- FAQ -->
+          <div>
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">
+              Perguntas Frequentes
+            </h2>
+            <div class="space-y-4">
+              <div class="faq-item bg-white rounded-lg shadow-sm">
+                <button
+                  class="faq-question w-full text-left p-6 flex justify-between items-center"
+                >
+                  <span class="font-semibold text-gray-800"
+                    >Como funciona o processo de internação?</span
+                  >
+                  <i class="ri-add-line text-xl text-primary faq-icon"></i>
+                </button>
+                <div class="faq-answer hidden px-6 pb-6">
+                  <p class="text-gray-600">
+                    O processo inicia com uma avaliação personalizada do caso.
+                    Nossa equipe identifica a clínica mais adequada, organiza a
+                    remoção segura e acompanha todo o processo de internação,
+                    garantindo que o paciente receba o cuidado necessário.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-item bg-white rounded-lg shadow-sm">
+                <button
+                  class="faq-question w-full text-left p-6 flex justify-between items-center"
+                >
+                  <span class="font-semibold text-gray-800"
+                    >Quanto tempo demora para encontrar uma vaga?</span
+                  >
+                  <i class="ri-add-line text-xl text-primary faq-icon"></i>
+                </button>
+                <div class="faq-answer hidden px-6 pb-6">
+                  <p class="text-gray-600">
+                    Trabalhamos com urgência em cada caso. Normalmente
+                    conseguimos uma vaga em até 24 horas, dependendo da
+                    disponibilidade das clínicas parceiras e das necessidades
+                    específicas do paciente.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-item bg-white rounded-lg shadow-sm">
+                <button
+                  class="faq-question w-full text-left p-6 flex justify-between items-center"
+                >
+                  <span class="font-semibold text-gray-800"
+                    >O serviço tem custo?</span
+                  >
+                  <i class="ri-add-line text-xl text-primary faq-icon"></i>
+                </button>
+                <div class="faq-answer hidden px-6 pb-6">
+                  <p class="text-gray-600">
+                    Nossa consultoria e direcionamento são gratuitos. Os custos
+                    envolvem apenas o tratamento na clínica escolhida e, quando
+                    necessário, o transporte especializado para a remoção
+                    segura.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-item bg-white rounded-lg shadow-sm">
+                <button
+                  class="faq-question w-full text-left p-6 flex justify-between items-center"
+                >
+                  <span class="font-semibold text-gray-800"
+                    >Como escolhem a clínica adequada?</span
+                  >
+                  <i class="ri-add-line text-xl text-primary faq-icon"></i>
+                </button>
+                <div class="faq-answer hidden px-6 pb-6">
+                  <p class="text-gray-600">
+                    Consideramos diversos fatores: tipo de dependência,
+                    histórico médico, localização, perfil do paciente,
+                    metodologia de tratamento e disponibilidade. Todas nossas
+                    parceiras são licenciadas e reconhecidas.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Depoimentos -->
+          <div>
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">Depoimentos</h2>
+            <div class="testimonial-container">
+              <div class="testimonial-item bg-white p-8 rounded-lg shadow-sm">
+                <div class="flex items-center mb-4">
+                  <img
+                    src="https://readdy.ai/api/search-image?query=professional%20portrait%20of%20middle-aged%20woman%20with%20kind%20expression%2C%20warm%20lighting%2C%20clean%20background%2C%20trustworthy%20appearance%2C%20healthcare%20professional%20style&width=80&height=80&seq=testimonial001&orientation=squarish"
+                    alt="Maria Silva"
+                    class="w-16 h-16 rounded-full object-cover mr-4"
+                  />
+                  <div>
+                    <h4 class="font-semibold text-gray-800">Maria Silva</h4>
+                    <p class="text-gray-600 text-sm">Mãe de paciente</p>
+                  </div>
+                </div>
+                <p class="text-gray-600 italic">
+                  "Quando mais precisávamos de ajuda, esta equipe nos acolheu
+                  com tanto carinho. Encontraram a clínica perfeita para meu
+                  filho e nos apoiaram durante todo o processo. Hoje ele está em
+                  recuperação e nossa família tem esperança novamente."
+                </p>
+              </div>
+            </div>
+            <div class="flex justify-center mt-6 space-x-2">
+              <button
+                class="testimonial-dot w-3 h-3 rounded-full bg-primary"
+              ></button>
+              <button
+                class="testimonial-dot w-3 h-3 rounded-full bg-gray-300"
+              ></button>
+              <button
+                class="testimonial-dot w-3 h-3 rounded-full bg-gray-300"
+              ></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contato -->
+    <section id="contato" class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            Entre em Contato
+          </h2>
+          <p class="text-xl text-gray-600">
+            Estamos aqui para ajudar você e sua família. Entre em contato
+            conosco agora mesmo.
+          </p>
+        </div>
+        <div class="flex justify-center">
+          <div class="bg-white rounded-2xl shadow-xl border border-primary/20 p-8 sm:p-10 flex flex-col justify-center items-center w-full max-w-2xl mx-auto">
+            <h3 class="text-2xl font-bold text-primary mb-6 text-center">
+              Solicite Atendimento Personalizado
+            </h3>
+            <form class="space-y-6 w-full">
+              <div class="relative">
+                <i class="ri-user-line absolute left-4 top-1/2 -translate-y-1/2 text-primary text-lg"></i>
+                <input
+                  type="text"
+                  placeholder="Seu nome completo"
+                  class="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base transition-all duration-200"
+                  required
+                />
+              </div>
+              <div class="relative">
+                <i class="ri-mail-line absolute left-4 top-1/2 -translate-y-1/2 text-primary text-lg"></i>
+                <input
+                  type="email"
+                  placeholder="Seu e-mail"
+                  class="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base transition-all duration-200"
+                  required
+                />
+              </div>
+              <div class="relative">
+                <i class="ri-phone-line absolute left-4 top-1/2 -translate-y-1/2 text-primary text-lg"></i>
+                <input
+                  type="tel"
+                  placeholder="Seu telefone"
+                  class="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base transition-all duration-200"
+                  required
+                />
+              </div>
+              <div class="relative">
+                <i class="ri-chat-3-line absolute left-4 top-6 text-primary text-lg"></i>
+                <textarea
+                  rows="6"
+                  placeholder="Descreva sua situação. Quanto mais detalhes, melhor poderemos ajudar."
+                  class="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base resize-none transition-all duration-200"
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-gradient-to-r from-blue-600 to-primary text-white py-4 !rounded-button text-lg font-semibold flex items-center justify-center gap-2 hover:scale-105 hover:shadow-lg transition-all duration-300"
+              >
+                <i class="ri-send-plane-2-line text-xl"></i>
+                Enviar Mensagem
+              </button>
+            </form>
+            <p class="text-xs text-gray-400 mt-6 text-center">
+              Seus dados são protegidos e usados apenas para retorno do atendimento.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+      <div class="w-full max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <div>
+            <!-- Logo no footer -->
+            <img src="assets/logoSF2.png" alt="Logo" class="h-20 w-auto mb-1" />
+            <p class="text-gray-300 text-sm sm:text-base">
+              Caminho da Recuperação - Sua jornada para uma vida melhor começa aqui.
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4 text-base sm:text-lg">Navegação</h4>
+            <ul class="space-y-2 text-gray-300 text-sm sm:text-base">
+              <li>
+                <a href="#inicio" class="hover:text-primary transition-colors"
+                  >Início</a
+                >
+              </li>
+              <li>
+                <a href="#sobre" class="hover:text-primary transition-colors"
+                  >Sobre Nós</a
+                >
+              </li>
+              <li>
+                <a href="#servicos" class="hover:text-primary transition-colors"
+                  >Serviços</a
+                >
+              </li>
+              <li>
+                <a href="#clinicas" class="hover:text-primary transition-colors"
+                  >Clínicas</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4 text-base sm:text-lg">Contato</h4>
+            <ul class="space-y-2 text-gray-300 text-sm sm:text-base break-all">
+              <li>(11) 9 9999-9999</li>
+              <li>contato@caminhorecuperacao.com.br</li>
+              <li>Av. Paulista, 1000 - São Paulo, SP</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4 text-base sm:text-lg">Emergência</h4>
+            <p class="text-gray-300 mb-4 text-sm sm:text-base">
+              Atendimento 24 horas por dia, 7 dias por semana
+            </p>
+            <button
+              class="bg-primary text-white px-6 py-3 !rounded-button font-semibold hover:bg-opacity-90 transition-all duration-200 whitespace-nowrap w-full"
+            >
+              Ligar Agora
+            </button>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-xs sm:text-base"
+        >
+          <p>
+            &copy; 2025 Caminho da Recuperação. Todos os direitos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- Botão WhatsApp fixo mais para cima -->
+    <a
+      href="https://wa.me/5511999999999"
+      target="_blank"
+      class="fixed bottom-8 right-4 sm:bottom-6 sm:right-6 bg-green-500 text-white w-14 h-14 sm:w-14 sm:h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-all duration-200 z-50"
+    >
+      <i class="ri-whatsapp-line text-2xl sm:text-2xl"></i>
+    </a>
+    <script id="mobile-menu-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const mobileMenuOverlay = document.getElementById("mobile-menu-overlay");
+        const mobileMenuClose = document.getElementById("mobile-menu-close");
+        const mobileMenuLinks = document.querySelectorAll(".mobile-menu-link");
+
+        function openMobileMenu() {
+          mobileMenu.classList.remove("translate-x-full");
+          mobileMenuOverlay.classList.remove("opacity-0", "invisible");
+          document.body.style.overflow = "hidden";
+        }
+
+        function closeMobileMenu() {
+          mobileMenu.classList.add("translate-x-full");
+          mobileMenuOverlay.classList.add("opacity-0", "invisible");
+          document.body.style.overflow = "";
+        }
+
+        mobileMenuBtn.addEventListener("click", openMobileMenu);
+        mobileMenuClose.addEventListener("click", closeMobileMenu);
+        mobileMenuOverlay.addEventListener("click", closeMobileMenu);
+
+        mobileMenuLinks.forEach((link) => {
+          link.addEventListener("click", closeMobileMenu);
+        });
+
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") {
+            closeMobileMenu();
+          }
+        });
+      });
+    </script>
+    <script id="faq-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const faqItems = document.querySelectorAll(".faq-item");
+        faqItems.forEach((item) => {
+          const question = item.querySelector(".faq-question");
+          const answer = item.querySelector(".faq-answer");
+          const icon = item.querySelector(".faq-icon");
+          answer.style.maxHeight = "0";
+          answer.style.overflow = "hidden";
+          answer.style.transition =
+            "max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, padding 0.3s ease-in-out";
+          answer.style.opacity = "0";
+          answer.classList.remove("hidden");
+          question.addEventListener("click", function () {
+            const isOpen = answer.style.maxHeight !== "0px";
+            faqItems.forEach((otherItem) => {
+              const otherAnswer = otherItem.querySelector(".faq-answer");
+              const otherIcon = otherItem.querySelector(".faq-icon");
+              otherAnswer.style.maxHeight = "0";
+              otherAnswer.style.opacity = "0";
+              otherAnswer.style.paddingBottom = "0";
+              otherIcon.classList.remove("ri-subtract-line");
+              otherIcon.classList.add("ri-add-line");
+              otherIcon.style.transform = "rotate(0deg)";
+            });
+            if (!isOpen) {
+              answer.style.maxHeight = answer.scrollHeight + "px";
+              answer.style.opacity = "1";
+              answer.style.paddingBottom = "1.5rem";
+              icon.classList.remove("ri-add-line");
+              icon.classList.add("ri-subtract-line");
+              icon.style.transform = "rotate(180deg)";
+            }
+          });
+          icon.style.transition = "transform 0.3s ease-in-out";
+        });
+      });
+    </script>
+    <script id="testimonial-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const testimonials = [
+          {
+            name: "Maria Silva",
+            role: "Mãe de paciente",
+            text: "Quando mais precisávamos de ajuda, esta equipe nos acolheu com tanto carinho. Encontraram a clínica perfeita para meu filho e nos apoiaram durante todo o processo. Hoje ele está em recuperação e nossa família tem esperança novamente.",
+            image:
+              "https://readdy.ai/api/search-image?query=professional%20portrait%20of%20middle-aged%20woman%20with%20kind%20expression%2C%20warm%20lighting%2C%20clean%20background%2C%20trustworthy%20appearance%2C%20healthcare%20professional%20style&width=80&height=80&seq=testimonial001&orientation=squarish",
+          },
+          {
+            name: "João Santos",
+            role: "Esposo de paciente",
+            text: "Não sabíamos mais o que fazer até encontrarmos esta equipe. Eles nos orientaram com muito profissionalismo e carinho. Minha esposa está se recuperando e nossa família está unida novamente. Gratidão eterna por tudo.",
+            image:
+              "https://readdy.ai/api/search-image?query=professional%20portrait%20of%20middle-aged%20man%20with%20compassionate%20expression%2C%20warm%20lighting%2C%20clean%20background%2C%20trustworthy%20appearance%2C%20healthcare%20professional%20style&width=80&height=80&seq=testimonial002&orientation=squarish",
+          },
+          {
+            name: "Ana Costa",
+            role: "Irmã de paciente",
+            text: "O cuidado e a atenção que recebemos foram excepcionais. Desde o primeiro contato até a internação, tudo foi conduzido com muito respeito e humanidade. Meu irmão está bem e isso não tem preço.",
+            image:
+              "https://readdy.ai/api/search-image?query=professional%20portrait%20of%20young%20woman%20with%20caring%20expression%2C%20warm%20lighting%2C%20clean%20background%2C%20trustworthy%20appearance%2C%20healthcare%20professional%20style&width=80&height=80&seq=testimonial003&orientation=squarish",
+          },
+        ];
+        let currentTestimonial = 0;
+        const testimonialContainer = document.querySelector(".testimonial-container");
+        const dots = document.querySelectorAll(".testimonial-dot");
+
+        function animateOut(callback) {
+          testimonialContainer.firstElementChild.classList.add("opacity-0", "-translate-x-8", "transition-all", "duration-500");
+          setTimeout(callback, 500);
+        }
+
+        function animateIn() {
+          testimonialContainer.firstElementChild.classList.remove("opacity-0", "-translate-x-8");
+          testimonialContainer.firstElementChild.classList.add("opacity-100", "translate-x-0", "transition-all", "duration-500");
+        }
+
+        function showTestimonial(index) {
+          const testimonial = testimonials[index];
+          testimonialContainer.innerHTML = `
+        <div class="testimonial-item bg-white p-8 rounded-lg shadow-sm opacity-0 -translate-x-8 transition-all duration-500">
+          <div class="flex items-center mb-4">
+            <img src="${testimonial.image}"
+              alt="${testimonial.name}"
+              class="w-16 h-16 rounded-full object-cover mr-4">
+            <div>
+              <h4 class="font-semibold text-gray-800">${testimonial.name}</h4>
+              <p class="text-gray-600 text-sm">${testimonial.role}</p>
+            </div>
+          </div>
+          <p class="text-gray-600 italic">"${testimonial.text}"</p>
+        </div>
+      `;
+          setTimeout(animateIn, 30);
+          dots.forEach((dot, i) => {
+            if (i === index) {
+              dot.classList.remove("bg-gray-300");
+              dot.classList.add("bg-primary");
+            } else {
+              dot.classList.remove("bg-primary");
+              dot.classList.add("bg-gray-300");
+            }
+          });
+        }
+
+        dots.forEach((dot, index) => {
+          dot.addEventListener("click", function () {
+            animateOut(() => {
+              currentTestimonial = index;
+              showTestimonial(currentTestimonial);
+            });
+          });
+        });
+
+        showTestimonial(currentTestimonial);
+
+        setInterval(function () {
+          animateOut(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+          });
+        }, 5000);
+      });
+    </script>
+    <script id="smooth-scroll-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll('a[href^="#"]');
+        links.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              const headerHeight = document.querySelector("header").offsetHeight;
+              const targetPosition = targetElement.offsetTop - headerHeight;
+              window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
