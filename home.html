@@ -13,7 +13,7 @@
         theme: {
           extend: {
             colors: {
-              primary: "#57B5E7",
+              primary: "#57B5EF",
               secondary: "#8DD3C7",
             },
             borderRadius: {
@@ -28,6 +28,9 @@
               full: "9999px",
               button: "8px",
             },
+            fontFamily: {
+              'impact': ['Impact', 'Haettenschweiler', 'Arial Narrow Bold', 'sans-serif'],
+            }
           },
         },
       };
@@ -35,7 +38,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Impact&family=Pacifico&family=Poppins:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
@@ -50,7 +53,7 @@
       font-family: 'Poppins', sans-serif;
       }
       .hero-bg {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(247, 250, 252, 0.9) 50%, rgba(240, 249, 255, 0.85) 100%), url('https://readdy.ai/api/search-image?query=serene%20healthcare%20environment%20with%20soft%20natural%20lighting%2C%20peaceful%20medical%20consultation%20room%20with%20warm%20atmosphere%2C%20clean%20modern%20interior%20design%2C%20gentle%20healing%20ambiance%2C%20professional%20yet%20welcoming%20space%2C%20subtle%20blue%20and%20white%20tones&width=1920&height=1080&seq=hero002&orientation=landscape');
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.884) 0%, rgba(247, 250, 252, 0.918) 50%, rgba(243, 250, 255, 0.925) 100%), url('https://readdy.ai/api/search-image?query=serene%20healthcare%20environment%20with%20soft%20natural%20lighting%2C%20peaceful%20medical%20consultation%20room%20with%20warm%20atmosphere%2C%20clean%20modern%20interior%20design%2C%20gentle%20healing%20ambiance%2C%20professional%20yet%20welcoming%20space%2C%20subtle%20blue%20and%20white%20tones&width=1920&height=1080&seq=hero002&orientation=landscape');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -92,124 +95,78 @@
         opacity: 0;
         transition: opacity 1s;
       }
+      
+      .emergencia-title {
+        font-family: 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+        font-weight: 400;
+        letter-spacing: 1px;
+      }
+      .icon-container {
+        width: 75px; 
+        height: 75px; 
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 15px;
+        background: rgba(255, 255, 255, 0.322); 
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.788);
+      }
+      .icon-img {
+        width: 38px; 
+        height: 38px; 
+        object-fit: contain;
+      }
+      
     </style>
   </head>
   <body class="bg-gray-50 overflow-x-hidden">
     <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-18 relative">
-          <div class="flex items-center">
-            <!-- No header desktop -->
-            <img src="assets/logoSF.png" alt="Logo" class="h-20 w-auto" />
-          </div>
-          <nav class="hidden md:flex space-x-8">
-            <a
-              href="#inicio"
-              class="menu-link text-gray-700 hover:text-primary transition-colors duration-200 relative"
-              >Início</a
-            >
-            <a
-              href="#sobre"
-              class="menu-link text-gray-700 hover:text-primary transition-colors duration-200 relative"
-              >Sobre Nós</a
-            >
-            <a
-              href="#servicos"
-              class="menu-link text-gray-700 hover:text-primary transition-colors duration-200 relative"
-              >Serviços</a
-            >
-            <a
-              href="#clinicas"
-              class="menu-link text-gray-700 hover:text-primary transition-colors duration-200 relative"
-              >Clínicas Parceiras</a
-            >
-            <a
-              href="#interacao"
-              class="menu-link text-gray-700 hover:text-primary transition-colors duration-200 relative"
-              >Interação</a
-            >
-            <a
-              href="#contato"
-              class="menu-link text-gray-700 hover:text-primary transition-colors duration-200 relative"
-              >Contato</a
-            >
-          </nav>
-          <button
-            id="mobile-menu-btn"
-            class="md:hidden w-10 h-10 flex items-center justify-center absolute right-4 top-1/2 -translate-y-1/2 z-50"
-          >
-            <i class="ri-menu-line text-3xl text-primary"></i>
-          </button>
-        </div>
-      </div>
-    </header>
-    <!-- Mobile Menu Overlay -->
-    <div
-      id="mobile-menu-overlay"
-      class="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden opacity-0 invisible transition-all duration-300"
-    ></div>
+    <header class="fixed w-full top-0 left-0 bg-white shadow-md z-50">
+  <div class="container mx-auto flex items-center justify-between h-20">
+    <!-- Logo -->
 
-    <!-- Mobile Menu Sidebar -->
-    <div
-      id="mobile-menu"
-      class="fixed top-0 right-0 h-full w-full sm:w-80 bg-white shadow-2xl z-50 md:hidden transform translate-x-full transition-transform duration-300 ease-in-out"
-    >
-      <div
-        class="flex items-center justify-between p-6 border-b border-gray-200"
-      >
-        <!-- Logo no menu mobile -->
-        <img src="assets/logoSF2.png" alt="Logo" class="h-20 w-auto" />
-        <button
-          id="mobile-menu-close"
-          class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-700 transition-colors"
-        >
-          <i class="ri-close-line text-xl"></i>
-        </button>
-      </div>
-      <nav class="p-6">
-        <div class="space-y-1">
-          <a
-            href="#inicio"
-            class="mobile-menu-link block py-3 px-4 text-gray-700 hover:bg-gray-50 hover:text-primary rounded-lg transition-all duration-200"
-            >Início</a
-          >
-          <a
-            href="#sobre"
-            class="mobile-menu-link block py-3 px-4 text-gray-700 hover:bg-gray-50 hover:text-primary rounded-lg transition-all duration-200"
-            >Sobre Nós</a
-          >
-          <a
-            href="#servicos"
-            class="mobile-menu-link block py-3 px-4 text-gray-700 hover:bg-gray-50 hover:text-primary rounded-lg transition-all duration-200"
-            >Serviços</a
-          >
-          <a
-            href="#clinicas"
-            class="mobile-menu-link block py-3 px-4 text-gray-700 hover:bg-gray-50 hover:text-primary rounded-lg transition-all duration-200"
-            >Clínicas Parceiras</a
-          >
-          <a
-            href="#interacao"
-            class="mobile-menu-link block py-3 px-4 text-gray-700 hover:bg-gray-50 hover:text-primary rounded-lg transition-all duration-200"
-            >Interação</a
-          >
-          <a
-            href="#contato"
-            class="mobile-menu-link block py-3 px-4 text-gray-700 hover:bg-gray-50 hover:text-primary rounded-lg transition-all duration-200"
-            >Contato</a
-          >
-        </div>
-        <div class="mt-8 pt-6 border-t border-gray-200">
-          <button
-            class="w-full bg-primary text-white py-3 px-4 !rounded-button font-semibold hover:bg-opacity-90 transition-all duration-200 whitespace-nowrap"
-          >
-            <i class="ri-phone-line mr-2"></i>
-            Ligar Agora
-          </button>
-        </div>
-      </nav>
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="assets/logoSF4.png" width="305" height="60" alt="">
+  </a>
+</nav>
+
+    <!-- Menu Desktop -->
+    <nav class="hidden md:flex space-x-10 flex-grow justify-end">
+      <a href="#inicio" class="menu-link text-gray-700 hover:text-primary">Início</a>
+      <a href="#sobre" class="menu-link text-gray-700 hover:text-primary">Sobre Nós</a>
+      <a href="#servicos" class="menu-link text-gray-700 hover:text-primary">Serviços</a>
+      <a href="#clinicas" class="menu-link text-gray-700 hover:text-primary">Clínicas Parceiras</a>
+      <a href="#interacao" class="menu-link text-gray-700 hover:text-primary">Interação</a>
+      <a href="#contato" class="menu-link text-gray-700 hover:text-primary">Contato</a>
+    </nav>
+
+    <!-- Botão Mobile -->
+    <div class="md:hidden">
+      <button id="menu-toggle" class="focus:outline-none">
+        <svg class="w-8 h-8 text-gray-700" fill="none" stroke="currentColor"
+          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
     </div>
+  </div>
+
+  <!-- Menu Mobile -->
+  <nav id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+    <a href="#inicio" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Início</a>
+    <a href="#sobre" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Sobre Nós</a>
+    <a href="#emergencias" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Emergências 24h</a>
+    <a href="#servicos" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Serviços</a>
+    <a href="#clinicas" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Clínicas Parceiras</a>
+    <a href="#interacao" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Interação</a>
+    <a href="#contato" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contato</a>
+  </nav>
+</header>
+
     <!-- Hero Section -->
     <section
       id="inicio"
@@ -256,6 +213,7 @@
               opacity: 0;
               transition: opacity 1s;
             }
+            
           </style>
 
           <script>
@@ -391,11 +349,187 @@
         </div>
       </div>
     </section>
-    <!-- Serviços -->
+    <section id="emergencias" class="bg-gradient-to-br from-blue-50 to-blue-100 py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl lg:text-5xl font-bold text-gray-800 mb-4">
+            CLINICAS DE RECUPERAÇÃO
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Atendimento imediato e especializado para situações críticas
+          </p>
+          <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="bg-gradient-to-br from-red-600 to-red-500 rounded-xl p-6 shadow-lg border border-red-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <div class="text-center">
+              <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+                <img src="assets/alarm.png" alt="Emergências 24h" class="w-10 h-10 object-contain">
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Emergências 24h</h3>
+              <p class="text-red-100 text-sm leading-relaxed mb-4">
+                Atendimento imediato para crises e urgências médicas
+              </p>
+              <button class="w-full bg-white text-red-600 py-3 rounded-lg font-semibold hover:bg-red-50 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
+                <i class="ri-phone-line"></i>
+                Ligue Agora
+              </button>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <div class="text-center">
+              <div class="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                <img src="assets/hospital.png" alt="Internação Involuntária" class="w-10 h-10 object-contain">
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-3">Internação Involuntária</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                Clínica especializada em casos complexos e urgentes
+              </p>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <div class="text-center">
+              <div class="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                <img src="assets/lab.png" alt="Dependência Química" class="w-10 h-10 object-contain">
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-3">Dependência Química</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                Tratamento especializado e humanizado para dependentes químicos
+              </p>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <div class="text-center">
+              <div class="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                <img src="assets/alcool.png" alt="Alcoolismo" class="w-10 h-10 object-contain">
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-3">Alcoolismo</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                Tratamento para alcoolismo por profissionais qualificados
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<section class="bg-white py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-start mb-20">
+      <div class="order-2 lg:order-1 flex items-center justify-center">
+        <div class="rounded-2xl p-6 w-270">
+          <img 
+            src="assets/enfermeiros.jpg" 
+            alt="Equipe de profissionais da saúde"
+            class="w-full h-auto rounded-xl object-cover shadow-md"
+          >
+        </div>
+      </div>
+      <div class="order-1 lg:order-2 flex flex-col justify-center h-full">
+        <br>
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-6 leading-tight drop-shadow-sm" style="font-family: 'Poppins', sans-serif; font-weight: 700; letter-spacing: -0.02em;">
+          Equipe qualificada para ajudar dependentes químicos e Alcoolatras
+        </h2>
+        <p class="text-lg text-gray-600 mb-12 leading-relaxed">
+          Oferecemos tratamento especializado em nossa <strong class="text-black-600 font-semibold">clínica de reabilitação para dependentes químicos e alcoolatras</strong>, 
+          com abordagem humanizada e <strong class="text-black-600 font-semibold">profissionais altamente qualificados</strong>. 
+          Nossa metodologia é focada na recuperação integral do paciente.
+          Contamos com uma <strong class="text-black-600 font-semibold">estrutura completa e acolhedora</strong>, projetada para oferecer o máximo de conforto e segurança durante todo o processo de tratamento. 
+          Desenvolvemos <strong class="text-black-600 font-semibold">planos terapêuticos individualizados</strong>, que incluem acompanhamento médico constante, 
+          terapia psicológica, atividades ocupacionais e integração familiar.
+        </p>
+      </div>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-12 items-start">
+      <div class="flex flex-col justify-center h-full">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-6 leading-tight drop-shadow-sm" style="font-family: 'Poppins', sans-serif; font-weight: 700; letter-spacing: -0.02em;">
+          Realizamos Remoções Humanizadas
+        </h2>
+
+        <p class="text-lg text-gray-600 mb-12 leading-relaxed">
+          Realizamos <strong class="text-black-600 font-semibold">remoções seguras e humanizadas</strong>, oferecendo apoio às famílias que enfrentam o desafio da dependência química e do alcoolismo. 
+          Nossa equipe especializada garante um <strong class="text-black-600 font-semibold">transporte seguro e respeitoso</strong>, priorizando o bem-estar do paciente em todos os momentos.
+          Contamos com <strong class="text-black-600 font-semibold">profissionais treinados</strong> para lidar com situações delicadas, assegurando que todo o processo seja conduzido com 
+          <strong class="text-black-600 font-semibold">dignidade e cuidado</strong>. Trabalhamos 24 horas por dia para oferecer o suporte necessário quando as famílias mais precisam.
+        </p>
+      </div>
+      <div class="flex items-center justify-center">
+        <div class="rounded-2xl p-6 w-270">
+          <img 
+            src="assets/remocao.jpg" 
+            alt="Remoções humanizadas e seguras"
+            class="w-full h-auto rounded-xl object-cover shadow-md"
+          >
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+    <section class="bg-gradient-to-br from-blue-50 to-blue-100 py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+            NOSSOS FUNDAMENTOS
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Os valores que nos guiam
+          </p>
+          <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="ri-medal-line text-2xl text-blue-600"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-3">Qualidade</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                Excelência e segurança na execução dos nossos métodos de cuidado na clínica de reabilitação.
+              </p>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="ri-shield-check-line text-2xl text-green-600"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-3">Responsabilidade</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                Compromisso com o bem-estar de nossos pacientes e equipe, garantindo o cumprimento de todas as normas e regulamentos.
+              </p>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="ri-heart-line text-2xl text-purple-600"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-3">Humanidade</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                Tratamos nossos pacientes com respeito, oferecendo atendimento de qualidade que preserva sua privacidade e seus direitos.
+              </p>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="ri-line-chart-line text-2xl text-orange-600"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-3">Eficácia</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                Nosso alto índice de recuperação resulta de um trabalho dedicado à melhoria contínua dos processos e cuidados clínicos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+   <!-- Serviços -->
     <section id="servicos" class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-p to-secondary bg-clip-text text-transparent">
+          <h2 id="Servicos" class="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-p to-secondary bg-clip-text text-transparent ">
             Nossos Serviços
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
