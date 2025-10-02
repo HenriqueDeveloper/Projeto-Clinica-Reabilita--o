@@ -64,6 +64,19 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       }
+      @media (max-width: 767px) {
+        img[src="assets/banner-recomeco.png"] {
+          width: 100%;
+          height: 37rem;
+          object-fit: cover;
+        }
+        img[src="assets/enfermeiros.jpg"],
+        img[src="assets/remocao.jpg"] {
+          width: 100%;
+          height: 25rem;
+          object-fit: cover;
+        }
+      }
       /* Cursor animado com o mesmo gradiente da frase */
       #typing .cursor {
         display: inline-block;
@@ -98,10 +111,10 @@
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-18 relative">
+        <div class="flex justify-between items-center h-20 md:h-24 relative">
           <div class="flex items-center">
             <!-- No header desktop -->
-            <img src="assets/logoSF.png" alt="Logo" class="h-20 w-auto" />
+            <img src="assets/logoSF4.png" alt="Logo" class="h-20 md:h-28 w-auto transition-all duration-300" />
           </div>
           <nav class="hidden md:flex space-x-8">
             <a
@@ -159,7 +172,7 @@
         class="flex items-center justify-between p-6 border-b border-gray-200"
       >
         <!-- Logo no menu mobile -->
-        <img src="assets/logoSF2.png" alt="Logo" class="h-20 w-auto" />
+        <img src="assets/logoSF4.png" alt="Logo" class="h-20 w-auto" />
         <button
           id="mobile-menu-close"
           class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-700 transition-colors"
@@ -260,7 +273,7 @@
 
           <script>
             document.addEventListener("DOMContentLoaded", function () {
-              const palavra = "recuperação";
+              const palavra = "Recuperação";
               const typingSpan = document.getElementById("typing");
 
               function typeWord(callback) {
@@ -334,15 +347,15 @@
             </button>
           </div>
           <div
-            class="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
+            class="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
           >
         </div>
       </div>
     </section>
     <!-- Sobre Nós -->
-    <section id="sobre" class="py-20 bg-white">
+    <section id="sobre" class="pt-20 pb-12 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
               Nossa Missão é Cuidar
@@ -385,12 +398,65 @@
           <div class="relative">
             <img
               src="assets/banner-recomeco.png"
-              class="rounded-lg shadow-lg object-cover w-full h-500"
+              class="rounded-lg shadow-lg object-cover w-full h-500 max-[767px]:h-[28rem]"
             />
           </div>
         </div>
       </div>
     </section>
+    <section class="bg-white py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-start mb-20">
+      <div class="order-2 lg:order-1 flex items-center justify-center">
+        <div class="rounded-2xl p-4 w-270 max-[767px]:w-full">
+          <img 
+            src="assets/enfermeiros.jpg" 
+            alt="Equipe de profissionais da saúde"
+            class="w-full h-auto rounded-xl object-cover shadow-md"
+          >
+        </div>
+      </div>
+      <div class="order-1 lg:order-2 flex flex-col justify-center h-full">
+        <br>
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4 leading-tight drop-shadow-sm" style="font-family: 'Poppins', sans-serif; font-weight: 700; letter-spacing: -0.02em;">
+          Equipe qualificada para ajudar dependentes químicos e Alcoolatras
+        </h2>
+        <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+          Oferecemos tratamento especializado em nossa <strong class="text-black-600 font-semibold">clínica de reabilitação para dependentes químicos e alcoolatras</strong>, 
+          com abordagem humanizada e <strong class="text-black-600 font-semibold">profissionais altamente qualificados</strong>. 
+          Nossa metodologia é focada na recuperação integral do paciente.
+          Contamos com uma <strong class="text-black-600 font-semibold">estrutura completa e acolhedora</strong>, projetada para oferecer o máximo de conforto e segurança durante todo o processo de tratamento. 
+          Desenvolvemos <strong class="text-black-600 font-semibold">planos terapêuticos individualizados</strong>, que incluem acompanhamento médico constante, 
+          terapia psicológica, atividades ocupacionais e integração familiar.
+        </p>
+      </div>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-2 items-start">
+      <div class="flex flex-col justify-center h-full">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-6 leading-tight drop-shadow-sm" style="font-family: 'Poppins', sans-serif; font-weight: 700; letter-spacing: -0.02em;">
+          Realizamos Remoções Humanizadas
+        </h2>
+
+        <p class="text-lg text-gray-600 mb-12 leading-relaxed">
+          Realizamos <strong class="text-black-600 font-semibold">remoções seguras e humanizadas</strong>, oferecendo apoio às famílias que enfrentam o desafio da dependência química e do alcoolismo. 
+          Nossa equipe especializada garante um <strong class="text-black-600 font-semibold">transporte seguro e respeitoso</strong>, priorizando o bem-estar do paciente em todos os momentos.
+          Contamos com <strong class="text-black-600 font-semibold">profissionais treinados</strong> para lidar com situações delicadas, assegurando que todo o processo seja conduzido com 
+          <strong class="text-black-600 font-semibold">dignidade e cuidado</strong>. Trabalhamos 24 horas por dia para oferecer o suporte necessário quando as famílias mais precisam.
+        </p>
+      </div>
+      <div class="flex items-center justify-center">
+        <div class="rounded-2xl p-4 w-270 max-[767px]:w-full">
+          <img 
+            src="assets/remocao.jpg" 
+            alt="Remoções humanizadas e seguras"
+            class="w-full h-auto rounded-xl object-cover shadow-md"
+          >
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
     <!-- Serviços -->
     <section id="servicos" class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
