@@ -217,10 +217,10 @@
         </div>
         <div class="mt-8 pt-6 border-t border-gray-200">
           <button
-            class="w-full bg-primary text-white py-3 px-4 !rounded-button font-semibold hover:bg-opacity-90 transition-all duration-200 whitespace-nowrap"
-          >
-            <i class="ri-phone-line mr-2"></i>
-            Ligar Agora
+              onclick="window.location.href='tel:+5511934776119'"
+              class="w-full bg-primary text-white py-3 px-4 !rounded-button font-semibold hover:bg-opacity-90 transition-all duration-200 whitespace-nowrap">
+              <i class="ri-phone-line mr-2"></i>
+              Ligar Agora
           </button>
         </div>
       </nav>
@@ -334,24 +334,21 @@
             com dependência química, conectando famílias às melhores clínicas de
             tratamento próximas a você.
           </p>
-          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4 sm:px-0">
-            <button
-              class="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-primary text-white sm:px-10 py-4 sm:py-5 !rounded-button text-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 whitespace-nowrap"
-            >
-              <i class="ri-phone-line mr-2"></i>
-              Buscar Ajuda Agora
-            </button>
-            <button
-              class="w-full sm:w-auto bg-white/90 backdrop-blur-sm border-2 border-gray-200 text-gray-700 sm:px-10 py-4 sm:py-5 !rounded-button text-lg font-semibold hover:bg-white hover:shadow-lg hover:scale-105 transition-all duration-300 whitespace-nowrap"
-            >
-              <i class="ri-chat-3-line mr-2"></i>
-              Fale Conosco
-            </button>
-          </div>
-          <div
-            class="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
-          >
-        </div>
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4 sm:px-0">
+        <button
+            onclick="window.location.href='tel:+5511934776119'"
+            class="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-primary text-white sm:px-10 py-4 sm:py-5 !rounded-button text-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 whitespace-nowrap"
+        >
+            <i class="ri-phone-line mr-2"></i>
+            Buscar Ajuda Agora
+        </button>
+        <button
+            onclick="document.getElementById('contato').scrollIntoView({ behavior: 'smooth' })"
+            class="w-full sm:w-auto bg-white/90 backdrop-blur-sm border-2 border-gray-200 text-gray-700 sm:px-10 py-4 sm:py-5 !rounded-button text-lg font-semibold hover:bg-white hover:shadow-lg hover:scale-105 transition-all duration-300 whitespace-nowrap">
+            <i class="ri-chat-3-line mr-2"></i>
+            Fale Conosco
+        </button>
+      </div>
       </div>
     </section>
     <!-- Sobre Nós -->
@@ -369,16 +366,14 @@
               tratamento adequado.
             </p>
             <p class="text-lg text-gray-600 mb-6">
-              Acreditamos que cada pessoa merece uma segunda chance e que o
-              caminho para a recuperação deve ser trilhado com dignidade,
-              respeito e profissionalismo. Trabalhamos 24 horas por dia para
-              conectar você às melhores opções de tratamento.
+              Acreditamos que todo ser humano merece uma nova chance, e nosso papel é direcioná-los ao caminho para recuperação, que
+              deve ser trilhado com dignidade, respeito e profissionalismo. Trabalhamos 24 horas por dia para conectar você às melhores opções de tratamento.
             </p>
             <div class="mt-6">
               <ul class="space-y-4 text-gray-700 text-base">
                 <li>
                   <span class="font-semibold text-primary">Visão</span><br>
-                  Ser referência em reabilitação, oferecendo um ambiente de acolhimento, cuidado e transformação, ajudando cada paciente a conquistar uma nova oportunidade de vida.
+                  Ajudando cada paciente a se conectar a novas oportunidades com dignidade e sobriedade.
                 </li>
                 <li>
                   <span class="font-semibold text-secondary">Missão</span><br>
@@ -747,6 +742,7 @@
         </div>
       </div>
     </section>
+    
     <!-- Interação -->
     <section id="interacao" class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -786,10 +782,9 @@
                 </button>
                 <div class="faq-answer hidden px-6 pb-6">
                   <p class="text-gray-600">
-                    Trabalhamos com urgência em cada caso. Normalmente
-                    conseguimos uma vaga em até 24 horas, dependendo da
-                    disponibilidade das clínicas parceiras e das necessidades
-                    específicas do paciente.
+                    Trabalhamos com urgência em parceria junto as clínicas, com internações imediatas de acordo 
+                    com a sua localidade, em até 1 hora na grande São Paulo. 
+                    Atuamos também em todo território nacional.
                   </p>
                 </div>
               </div>
@@ -940,72 +935,61 @@
       </div>
     </section>
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-      <div class="w-full max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-          <div>
-            <!-- Logo no footer -->
-            <img src="assets/logoSF2.png" alt="Logo" class="h-16 w-auto mb-1" />
-            <p class="text-gray-300 text-sm sm:text-base">
-              Caminho da Recuperação - Sua jornada para uma vida melhor começa aqui.
-          </div>
-          <div>
-            <h4 class="font-semibold mb-4 text-base sm:text-lg">Navegação</h4>
-            <ul class="space-y-2 text-gray-300 text-sm sm:text-base">
-              <li>
-                <a href="#inicio" class="hover:text-primary transition-colors"
-                  >Início</a
+<footer class="bg-gradient-to-br from-gray-900 to-black text-white py-12">
+    <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row items-start justify-between">
+            <div class="w-full lg:w-1/4 mb-8 lg:mb-0">
+                <div class="flex flex-col items-start">
+                    <img src="assets/logoSF5.png" alt="Logo" class="h-16 w-22 mb-3" />
+                    <p class="text-gray-300 text-base text-left mt-2">
+                        Caminho da Recuperação - Sua jornada para uma vida melhor começa aqui.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="w-full lg:w-1/6 mb-8 lg:mb-0">
+                <h4 class="font-bold text-white text-lg mb-4">Navegação</h4>
+                <ul class="space-y-2 text-gray-300 text-base">
+                    <li><a href="#inicio" class="hover:text-white">Início</a></li>
+                    <li><a href="#sobre" class="hover:text-white">Sobre Nós</a></li>
+                    <li><a href="#servicos" class="hover:text-white">Serviços</a></li>
+                    <li><a href="#clinicas" class="hover:text-white">Clínicas</a></li>
+                </ul>
+            </div>
+            <div class="w-full lg:w-1/4 mb-8 lg:mb-0 lg:mr-auto lg:ml-20">
+                <h4 class="font-bold text-white text-lg mb-4">Contato</h4>
+                <ul class="space-y-2 text-gray-300 text-base">
+                    <li>(11) 9 3477-6119</li>
+                    <li>contato@caminhorecuperacao.com</li>
+                    <li>Av. Paulista, 1000 - São Paulo, SP</li>
+                </ul>
+            </div>
+            
+            <div class="w-full lg:w-1/4 lg:ml-16">
+                <h4 class="font-bold text-white text-lg mb-4">Emergência</h4>
+                <p class="text-gray-300 text-base mb-4">
+                    Atendimento 24 horas por dia, 7 dias por semana
+                </p>
+                <button
+                    onclick="window.location.href='tel:+5511934776119'"
+                    class="w-full bg-blue-600 text-white px-6 py-3 rounded-button font-bold hover:bg-blue-700"
                 >
-              </li>
-              <li>
-                <a href="#sobre" class="hover:text-primary transition-colors"
-                  >Sobre Nós</a
-                >
-              </li>
-              <li>
-                <a href="#servicos" class="hover:text-primary transition-colors"
-                  >Serviços</a
-                >
-              </li>
-              <li>
-                <a href="#clinicas" class="hover:text-primary transition-colors"
-                  >Clínicas</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-semibold mb-4 text-base sm:text-lg">Contato</h4>
-            <ul class="space-y-2 text-gray-300 text-sm sm:text-base break-all">
-              <li>(11) 9 9999-9999</li>
-              <li>contato@caminhorecuperacao.com.br</li>
-              <li>Av. Paulista, 1000 - São Paulo, SP</li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-semibold mb-4 text-base sm:text-lg">Emergência</h4>
-            <p class="text-gray-300 mb-4 text-sm sm:text-base">
-              Atendimento 24 horas por dia, 7 dias por semana
+                    <i class="ri-phone-line mr-2"></i>
+                    Ligar Agora
+                </button>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+            <p class="text-gray-400 text-sm">
+                &copy; 2025 Caminho da Recuperação. Todos os direitos reservados.
             </p>
-            <button
-              class="bg-primary text-white px-6 py-3 !rounded-button font-semibold hover:bg-opacity-90 transition-all duration-200 whitespace-nowrap w-full"
-            >
-              Ligar Agora
-            </button>
-          </div>
         </div>
-        <div
-          class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-xs sm:text-base"
-        >
-          <p>
-            &copy; 2025 Caminho da Recuperação. Todos os direitos reservados.
-          </p>
-        </div>
-      </div>
-    </footer>
+    </div>
+</footer>
     <!-- Botão WhatsApp fixo mais para cima -->
     <a
-      href="https://wa.me/5511999999999"
+      href="https://wa.me/5511934776119"
       target="_blank"
       class="fixed bottom-8 right-4 sm:bottom-6 sm:right-6 bg-green-500 text-white w-14 h-14 sm:w-14 sm:h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-all duration-200 z-50"
     >
