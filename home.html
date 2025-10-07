@@ -28,6 +28,15 @@
               full: "9999px",
               button: "8px",
             },
+            animation: {
+              'infinite-scroll': 'infinite-scroll 25s linear infinite',
+            },
+            keyframes: {
+              'infinite-scroll': {
+                from: { transform: 'translateX(0)' },
+                to: { transform: 'translateX(-100%)' },
+              }
+            },
           },
         },
       };
@@ -50,7 +59,7 @@
       font-family: 'Poppins', sans-serif;
       }
       .hero-bg {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(247, 250, 252, 0.9) 50%, rgba(240, 249, 255, 0.85) 100%), url('https://readdy.ai/api/search-image?query=serene%20healthcare%20environment%20with%20soft%20natural%20lighting%2C%20peaceful%20medical%20consultation%20room%20with%20warm%20atmosphere%2C%20clean%20modern%20interior%20design%2C%20gentle%20healing%20ambiance%2C%20professional%20yet%20welcoming%20space%2C%20subtle%20blue%20and%20white%20tones&width=1920&height=1080&seq=hero002&orientation=landscape');
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(247, 250, 252, 0.9) 50%, rgba(240, 249, 255, 0.85) 100%), url('assets/background-home.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -106,6 +115,16 @@
       #typing.fadeout .cursor {
         opacity: 0;
         transition: opacity 1s;
+      }
+      /* Animação de Scroll */
+      .scroll-animate {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .scroll-animate.visible {
+        opacity: 1;
+        transform: translateY(0);
       }
     </style>
   </head>
@@ -234,7 +253,7 @@
         class="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-blue-50/30"
       ></div>
       <div class="w-full max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 relative z-10">
-        <div class="text-center">
+        <div class="text-center -translate-y-8">
           <h1
             class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 hero-text-shadow leading-tight break-words"
           >
@@ -354,7 +373,7 @@
     <!-- Sobre Nós -->
     <section id="sobre" class="pt-20 pb-12 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div class="grid md:grid-cols-2 gap-10 items-center scroll-animate">
           <div>
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
               Nossa Missão é Cuidar
@@ -403,7 +422,7 @@
     </section>
     <section class="bg-white py-12">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid lg:grid-cols-2 gap-12 items-start mb-20">
+    <div class="grid lg:grid-cols-2 gap-12 items-start mb-20 scroll-animate">
       <div class="order-2 lg:order-1 flex items-center justify-center">
         <div class="rounded-2xl p-4 w-270 max-[767px]:w-full">
           <img 
@@ -428,7 +447,7 @@
         </p>
       </div>
     </div>
-    <div class="grid lg:grid-cols-2 gap-2 items-start">
+    <div class="grid lg:grid-cols-2 gap-2 items-start scroll-animate">
       <div class="flex flex-col justify-center h-full">
         <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-6 leading-tight drop-shadow-sm" style="font-family: 'Poppins', sans-serif; font-weight: 700; letter-spacing: -0.02em;">
           Realizamos Remoções Humanizadas
@@ -457,7 +476,7 @@
     <!-- Serviços -->
     <section id="servicos" class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
+        <div class="text-center mb-16 scroll-animate">
           <h2 class="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-p to-secondary bg-clip-text text-transparent">
             Nossos Serviços
           </h2>
@@ -466,7 +485,7 @@
             família neste momento delicado
           </p>
         </div>
-        <div class="grid md:grid-cols-3 gap-10">
+        <div class="grid md:grid-cols-3 gap-10 scroll-animate">
           <!-- Card Serviço -->
           <div class="group bg-white p-8 rounded-2xl shadow-lg border-2 border-transparent hover:border-primary transition-all duration-300 hover:scale-105 hover:-translate-y-2 relative overflow-hidden">
             <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-opacity-20">
@@ -554,191 +573,38 @@
       </div>
     </section>
     <!-- Clínicas Parceiras -->
-    <section id="clinicas" class="py-20 bg-white">
+    <section id="clinicas" class="py-20 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
+        <div class="text-center mb-16 scroll-animate">
           <h2 class="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-primary to-secondary bg-clip-text text-transparent">
-            Clínicas Parceiras
+            Convênios Parceiros
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Trabalhamos com as melhores instituições de tratamento, todas licenciadas, avaliadas e especializadas em dependência química.
+            Facilitamos o acesso ao tratamento através de uma ampla rede de convênios parceiros. Verifique a cobertura e encontre a melhor opção para você.
           </p>
         </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-          <!-- Card Clínica -->
-          <div class="group bg-white rounded-2xl shadow-lg border-2 border-transparent hover:border-primary transition-all duration-300 hover:scale-105 hover:-translate-y-2 overflow-hidden relative">
-            <img
-              src="https://readdy.ai/api/search-image?query=modern%20rehabilitation%20clinic%20exterior%20with%20peaceful%20garden%2C%20clean%20white%20building%20with%20large%20windows%2C%20healing%20environment%2C%20professional%20medical%20facility%2C%20serene%20atmosphere%2C%20natural%20lighting&width=400&height=250&seq=clinic001&orientation=landscape"
-              alt="Clínica Esperança"
-              class="w-full h-48 object-cover object-top group-hover:scale-105 transition-transform duration-300"
-            />
-            <div class="absolute top-4 right-4 bg-primary/90 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1 shadow">
-              <i class="ri-shield-check-line text-base"></i> Licenciada
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-semibold text-gray-800 mb-2 group-hover:text-primary transition-colors duration-300">
-                Clínica Esperança
-              </h3>
-              <p class="text-primary font-medium mb-2">São Paulo - SP</p>
-              <div class="flex items-center gap-2 mb-2">
-                <i class="ri-star-fill text-yellow-400"></i>
-                <span class="text-gray-700 text-sm font-semibold">4.9/5</span>
-                <span class="text-gray-400 text-xs">(120 avaliações)</span>
-              </div>
-              <p class="text-gray-600 text-sm mb-2">
-                Especializada em tratamento de dependência química com abordagem multidisciplinar. Equipe médica altamente qualificada.
-              </p>
-              <div class="flex items-center gap-3 mt-4">
-                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">Vagas: 8</span>
-                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-semibold">Acompanhamento Familiar</span>
-              </div>
-            </div>
-          </div>
-          <!-- Card Clínica -->
-          <div class="group bg-white rounded-2xl shadow-lg border-2 border-transparent hover:border-secondary transition-all duration-300 hover:scale-105 hover:-translate-y-2 overflow-hidden relative">
-            <img
-              src="https://readdy.ai/api/search-image?query=therapeutic%20rehabilitation%20center%20with%20beautiful%20landscaping%2C%20modern%20medical%20building%20surrounded%20by%20nature%2C%20peaceful%20healing%20environment%2C%20professional%20healthcare%20facility&width=400&height=250&seq=clinic002&orientation=landscape"
-              alt="Instituto Vida Nova"
-              class="w-full h-48 object-cover object-top group-hover:scale-105 transition-transform duration-300"
-            />
-            <div class="absolute top-4 right-4 bg-secondary/90 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1 shadow">
-              <i class="ri-shield-check-line text-base"></i> Licenciada
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-semibold text-gray-800 mb-2 group-hover:text-secondary transition-colors duration-300">
-                Instituto Vida Nova
-              </h3>
-              <p class="text-secondary font-medium mb-2">Rio de Janeiro - RJ</p>
-              <div class="flex items-center gap-2 mb-2">
-                <i class="ri-star-fill text-yellow-400"></i>
-                <span class="text-gray-700 text-sm font-semibold">4.8/5</span>
-                <span class="text-gray-400 text-xs">(98 avaliações)</span>
-              </div>
-              <p class="text-gray-600 text-sm mb-2">
-                Centro de excelência em reabilitação com foco em tratamento humanizado. Terapias individuais e em grupo.
-              </p>
-              <div class="flex items-center gap-3 mt-4">
-                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-semibold">Vagas: 5</span>
-                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">Ambiente Acolhedor</span>
-              </div>
-            </div>
-          </div>
-          <!-- Card Clínica -->
-          <div class="group bg-white rounded-2xl shadow-lg border-2 border-transparent hover:border-primary transition-all duration-300 hover:scale-105 hover:-translate-y-2 overflow-hidden relative">
-            <img
-              src="https://readdy.ai/api/search-image?query=rehabilitation%20clinic%20with%20therapeutic%20gardens%2C%20clean%20modern%20architecture%2C%20medical%20facility%20with%20calming%20environment%2C%20professional%20treatment%20center%20with%20natural%20elements&width=400&height=250&seq=clinic003&orientation=landscape"
-              alt="Clínica Renascer"
-              class="w-full h-48 object-cover object-top group-hover:scale-105 transition-transform duration-300"
-            />
-            <div class="absolute top-4 right-4 bg-primary/90 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1 shadow">
-              <i class="ri-shield-check-line text-base"></i> Licenciada
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-semibold text-gray-800 mb-2 group-hover:text-primary transition-colors duration-300">
-                Clínica Renascer
-              </h3>
-              <p class="text-primary font-medium mb-2">Belo Horizonte - MG</p>
-              <div class="flex items-center gap-2 mb-2">
-                <i class="ri-star-fill text-yellow-400"></i>
-                <span class="text-gray-700 text-sm font-semibold">4.7/5</span>
-                <span class="text-gray-400 text-xs">(76 avaliações)</span>
-              </div>
-              <p class="text-gray-600 text-sm mb-2">
-                Referência em tratamento de dependências com metodologia inovadora. Medicina tradicional e terapias complementares.
-              </p>
-              <div class="flex items-center gap-3 mt-4">
-                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">Vagas: 4</span>
-                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-semibold">Terapias Naturais</span>
-              </div>
-            </div>
-          </div>
-          <!-- Card Clínica -->
-          <div class="group bg-white rounded-2xl shadow-lg border-2 border-transparent hover:border-secondary transition-all duration-300 hover:scale-105 hover:-translate-y-2 overflow-hidden relative">
-            <img
-              src="https://readdy.ai/api/search-image?query=peaceful%20medical%20rehabilitation%20facility%2C%20modern%20clinic%20building%20with%20therapeutic%20spaces%2C%20professional%20healthcare%20environment%20with%20natural%20lighting%20and%20gardens&width=400&height=250&seq=clinic004&orientation=landscape"
-              alt="Centro Harmonia"
-              class="w-full h-48 object-cover object-top group-hover:scale-105 transition-transform duration-300"
-            />
-            <div class="absolute top-4 right-4 bg-secondary/90 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1 shadow">
-              <i class="ri-shield-check-line text-base"></i> Licenciada
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-semibold text-gray-800 mb-2 group-hover:text-secondary transition-colors duration-300">
-                Centro Harmonia
-              </h3>
-              <p class="text-secondary font-medium mb-2">Curitiba - PR</p>
-              <div class="flex items-center gap-2 mb-2">
-                <i class="ri-star-fill text-yellow-400"></i>
-                <span class="text-gray-700 text-sm font-semibold">4.8/5</span>
-                <span class="text-gray-400 text-xs">(82 avaliações)</span>
-              </div>
-              <p class="text-gray-600 text-sm mb-2">
-                Clínica especializada em dependência química e transtornos associados. Programa intensivo de reabilitação.
-              </p>
-              <div class="flex items-center gap-3 mt-4">
-                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-semibold">Vagas: 6</span>
-                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">Acompanhamento Familiar</span>
-              </div>
-            </div>
-          </div>
-          <!-- Card Clínica -->
-          <div class="group bg-white rounded-2xl shadow-lg border-2 border-transparent hover:border-primary transition-all duration-300 hover:scale-105 hover:-translate-y-2 overflow-hidden relative">
-            <img
-              src="https://readdy.ai/api/search-image?query=therapeutic%20treatment%20center%20with%20serene%20architecture%2C%20medical%20facility%20designed%20for%20healing%2C%20clean%20modern%20building%20with%20calming%20outdoor%20spaces&width=400&height=250&seq=clinic005&orientation=landscape"
-              alt="Clínica Serenidade"
-              class="w-full h-48 object-cover object-top group-hover:scale-105 transition-transform duration-300"
-            />
-            <div class="absolute top-4 right-4 bg-primary/90 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1 shadow">
-              <i class="ri-shield-check-line text-base"></i> Licenciada
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-semibold text-gray-800 mb-2 group-hover:text-primary transition-colors duration-300">
-                Clínica Serenidade
-              </h3>
-              <p class="text-primary font-medium mb-2">Porto Alegre - RS</p>
-              <div class="flex items-center gap-2 mb-2">
-                <i class="ri-star-fill text-yellow-400"></i>
-                <span class="text-gray-700 text-sm font-semibold">4.9/5</span>
-                <span class="text-gray-400 text-xs">(110 avaliações)</span>
-              </div>
-              <p class="text-gray-600 text-sm mb-2">
-                Tratamento personalizado e reinserção social. Programa de acompanhamento pós-alta diferenciado.
-              </p>
-              <div class="flex items-center gap-3 mt-4">
-                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">Vagas: 7</span>
-                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-semibold">Pós-Alta</span>
-              </div>
-            </div>
-          </div>
-          <!-- Card Clínica -->
-          <div class="group bg-white rounded-2xl shadow-lg border-2 border-transparent hover:border-secondary transition-all duration-300 hover:scale-105 hover:-translate-y-2 overflow-hidden relative">
-            <img
-              src="https://readdy.ai/api/search-image?query=modern%20rehabilitation%20clinic%20with%20healing%20gardens%2C%20professional%20medical%20building%20with%20therapeutic%20design%2C%20peaceful%20healthcare%20facility%20surrounded%20by%20nature&width=400&height=250&seq=clinic006&orientation=landscape"
-              alt="Instituto Recomeço"
-              class="w-full h-48 object-cover object-top group-hover:scale-105 transition-transform duration-300"
-            />
-            <div class="absolute top-4 right-4 bg-secondary/90 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1 shadow">
-              <i class="ri-shield-check-line text-base"></i> Licenciada
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-semibold text-gray-800 mb-2 group-hover:text-secondary transition-colors duration-300">
-                Instituto Recomeço
-              </h3>
-              <p class="text-secondary font-medium mb-2">Salvador - BA</p>
-              <div class="flex items-center gap-2 mb-2">
-                <i class="ri-star-fill text-yellow-400"></i>
-                <span class="text-gray-700 text-sm font-semibold">4.8/5</span>
-                <span class="text-gray-400 text-xs">(95 avaliações)</span>
-              </div>
-              <p class="text-gray-600 text-sm mb-2">
-                Abordagem holística e equipe multidisciplinar. Alta taxa de sucesso em reabilitação.
-              </p>
-              <div class="flex items-center gap-3 mt-4">
-                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-semibold">Vagas: 3</span>
-                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">Equipe Multidisciplinar</span>
-              </div>
-            </div>
-          </div>
+        <div class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] scroll-animate">
+          <ul class="flex items-center justify-center md:justify-start [&_li]:mx-20 [&_img]:max-w-none animate-infinite-scroll">
+              <li><img src="assets/logo-amil.png" alt="Logo Amil" class="h-20" /></li> 
+              <li><img src="assets/logo-medtour.png" alt="Logo Medtour" class="h-20" /></li>
+              <li><img src="assets/logo-bradesco.jpg" alt="Logo Bradesco Saúde" class="h-20" /></li>
+              <li><img src="assets/logo-amil.png" alt="Logo Amil" class="h-20" /></li>
+              <li><img src="assets/logo-medtour.png" alt="Logo Medtour" class="h-20" /></li>
+              <li><img src="assets/logo-bradesco.jpg" alt="Logo Bradesco Saúde" class="h-20" /></li>
+          </ul>
+          <ul class="flex items-center justify-center md:justify-start [&_li]:mx-20 [&_img]:max-w-none animate-infinite-scroll" aria-hidden="true">
+              <li><img src="assets/logo-amil.png" alt="Logo Amil" class="h-20" /></li>
+              <li><img src="assets/logo-medtour.png" alt="Logo Medtour" class="h-20" /></li>
+              <li><img src="assets/logo-bradesco.jpg" alt="Logo Bradesco Saúde" class="h-20" /></li>
+              <li><img src="assets/logo-amil.png" alt="Logo Amil" class="h-20" /></li>
+              <li><img src="assets/logo-medtour.png" alt="Logo Medtour" class="h-20" /></li>
+              <li><img src="assets/logo-bradesco.jpg" alt="Logo Bradesco Saúde" class="h-20" /></li>
+          </ul>
+        </div>
+        <div class="text-center mt-12 scroll-animate">
+          <p class="text-lg text-gray-600">
+            Não encontrou seu convênio? Entre em contato conosco. Atendemos uma vasta gama de planos de saúde e nos adaptamos conforme a necessidade de cada paciente.
+          </p>
         </div>
       </div>
     </section>
@@ -746,7 +612,7 @@
     <!-- Interação -->
     <section id="interacao" class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-16">
+        <div class="grid lg:grid-cols-2 gap-16 scroll-animate">
           <!-- FAQ -->
           <div>
             <h2 class="text-3xl font-bold text-gray-800 mb-8">
@@ -868,7 +734,7 @@
     <!-- Contato -->
     <section id="contato" class="py-20 bg-white">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
+        <div class="text-center mb-16 scroll-animate">
           <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
             Entre em Contato
           </h2>
@@ -877,16 +743,17 @@
             conosco agora mesmo.
           </p>
         </div>
-        <div class="flex justify-center">
+        <div class="flex justify-center scroll-animate">
           <div class="bg-white rounded-2xl shadow-xl border border-primary/20 p-8 sm:p-10 flex flex-col justify-center items-center w-full max-w-2xl mx-auto">
             <h3 class="text-2xl font-bold text-primary mb-6 text-center">
               Solicite Atendimento Personalizado
             </h3>
-            <form class="space-y-6 w-full">
+            <form action="https://formsubmit.co/contato@caminhorecuperacao.com" method="POST" class="space-y-6 w-full">
               <div class="relative">
                 <i class="ri-user-line absolute left-4 top-1/2 -translate-y-1/2 text-primary text-lg"></i>
                 <input
                   type="text"
+                  name="Nome"
                   placeholder="Seu nome completo"
                   class="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base transition-all duration-200"
                   required
@@ -896,6 +763,7 @@
                 <i class="ri-mail-line absolute left-4 top-1/2 -translate-y-1/2 text-primary text-lg"></i>
                 <input
                   type="email"
+                  name="Email"
                   placeholder="Seu e-mail"
                   class="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base transition-all duration-200"
                   required
@@ -905,6 +773,7 @@
                 <i class="ri-phone-line absolute left-4 top-1/2 -translate-y-1/2 text-primary text-lg"></i>
                 <input
                   type="tel"
+                  name="Telefone"
                   placeholder="Seu telefone"
                   class="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base transition-all duration-200"
                   required
@@ -913,20 +782,27 @@
               <div class="relative">
                 <i class="ri-chat-3-line absolute left-4 top-6 text-primary text-lg"></i>
                 <textarea
+                  name="Mensagem"
                   rows="6"
                   placeholder="Descreva sua situação. Quanto mais detalhes, melhor poderemos ajudar."
                   class="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base resize-none transition-all duration-200"
                   required
                 ></textarea>
               </div>
+              <!-- Campos de configuração para o FormSubmit -->
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://caminhorecuperacao.com/obrigado.html"> <!-- Substitua pela sua página de agradecimento -->
+              <input type="hidden" name="_subject" value="Novo Contato do Site - Caminho da Recuperação">
+              <input type="hidden" name="_template" value="table">
               <button
                 type="submit"
                 class="w-full bg-gradient-to-r from-blue-600 to-primary text-white py-4 !rounded-button text-lg font-semibold flex items-center justify-center gap-2 hover:scale-105 hover:shadow-lg transition-all duration-300"
               >
                 <i class="ri-send-plane-2-line text-xl"></i>
-                Enviar Mensagem
+                <span>Enviar Mensagem</span>
               </button>
             </form>
+
             <p class="text-xs text-gray-400 mt-6 text-center">
               Seus dados são protegidos e usados apenas para retorno do atendimento.
             </p>
@@ -961,7 +837,6 @@
                 <ul class="space-y-2 text-gray-300 text-base">
                     <li>(11) 9 3477-6119</li>
                     <li>contato@caminhorecuperacao.com</li>
-                    <li>Av. Paulista, 1000 - São Paulo, SP</li>
                 </ul>
             </div>
             
@@ -1172,6 +1047,26 @@
             }
           });
         });
+      });
+    </script>
+    <script id="scroll-animation-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const animatedElements = document.querySelectorAll(".scroll-animate");
+
+        if ("IntersectionObserver" in window) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.1 });
+
+          animatedElements.forEach(el => {
+            observer.observe(el);
+          });
+        }
       });
     </script>
   </body>
