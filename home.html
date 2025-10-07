@@ -695,26 +695,8 @@
           <!-- Depoimentos -->
           <div>
             <h2 class="text-3xl font-bold text-gray-800 mb-8">Depoimentos</h2>
-            <div class="testimonial-container">
-              <div class="testimonial-item bg-white p-8 rounded-lg shadow-sm">
-                <div class="flex items-center mb-4">
-                  <img
-                    src="https://readdy.ai/api/search-image?query=professional%20portrait%20of%20middle-aged%20woman%20with%20kind%20expression%2C%20warm%20lighting%2C%20clean%20background%2C%20trustworthy%20appearance%2C%20healthcare%20professional%20style&width=80&height=80&seq=testimonial001&orientation=squarish"
-                    alt="Maria Silva"
-                    class="w-16 h-16 rounded-full object-cover mr-4"
-                  />
-                  <div>
-                    <h4 class="font-semibold text-gray-800">Maria Silva</h4>
-                    <p class="text-gray-600 text-sm">Mãe de paciente</p>
-                  </div>
-                </div>
-                <p class="text-gray-600 italic">
-                  "Quando mais precisávamos de ajuda, esta equipe nos acolheu
-                  com tanto carinho. Encontraram a clínica perfeita para meu
-                  filho e nos apoiaram durante todo o processo. Hoje ele está em
-                  recuperação e nossa família tem esperança novamente."
-                </p>
-              </div>
+            <div class="testimonial-container min-h-[250px]">
+              <!-- O conteúdo do depoimento será inserido aqui via JavaScript -->
             </div>
             <div class="flex justify-center mt-6 space-x-2">
               <button
@@ -950,22 +932,16 @@
             name: "Maria Silva",
             role: "Mãe de paciente",
             text: "Quando mais precisávamos de ajuda, esta equipe nos acolheu com tanto carinho. Encontraram a clínica perfeita para meu filho e nos apoiaram durante todo o processo. Hoje ele está em recuperação e nossa família tem esperança novamente.",
-            image:
-              "https://readdy.ai/api/search-image?query=professional%20portrait%20of%20middle-aged%20woman%20with%20kind%20expression%2C%20warm%20lighting%2C%20clean%20background%2C%20trustworthy%20appearance%2C%20healthcare%20professional%20style&width=80&height=80&seq=testimonial001&orientation=squarish",
           },
           {
             name: "João Santos",
             role: "Esposo de paciente",
             text: "Não sabíamos mais o que fazer até encontrarmos esta equipe. Eles nos orientaram com muito profissionalismo e carinho. Minha esposa está se recuperando e nossa família está unida novamente. Gratidão eterna por tudo.",
-            image:
-              "https://readdy.ai/api/search-image?query=professional%20portrait%20of%20middle-aged%20man%20with%20compassionate%20expression%2C%20warm%20lighting%2C%20clean%20background%2C%20trustworthy%20appearance%2C%20healthcare%20professional%20style&width=80&height=80&seq=testimonial002&orientation=squarish",
           },
           {
             name: "Ana Costa",
             role: "Irmã de paciente",
             text: "O cuidado e a atenção que recebemos foram excepcionais. Desde o primeiro contato até a internação, tudo foi conduzido com muito respeito e humanidade. Meu irmão está bem e isso não tem preço.",
-            image:
-              "https://readdy.ai/api/search-image?query=professional%20portrait%20of%20young%20woman%20with%20caring%20expression%2C%20warm%20lighting%2C%20clean%20background%2C%20trustworthy%20appearance%2C%20healthcare%20professional%20style&width=80&height=80&seq=testimonial003&orientation=squarish",
           },
         ];
         let currentTestimonial = 0;
@@ -985,9 +961,9 @@
         function showTestimonial(index) {
           const testimonial = testimonials[index];
           testimonialContainer.innerHTML = `
-        <div class="testimonial-item bg-white p-8 rounded-lg shadow-sm opacity-0 -translate-x-8 transition-all duration-500">
+        <div class="testimonial-item bg-white p-8 rounded-lg shadow-sm opacity-0 -translate-x-8 transition-all duration-500 min-h-[250px] flex flex-col justify-center">
           <div class="flex items-center mb-4">
-            <img src="${testimonial.image}"
+            <img src="https://ui-avatars.com/api/?name=${testimonial.name.replace(/ /g, "+")}&background=random&color=fff&size=80"
               alt="${testimonial.name}"
               class="w-16 h-16 rounded-full object-cover mr-4">
             <div>
